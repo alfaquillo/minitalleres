@@ -1,0 +1,399 @@
+alfaquillo@quillo-thinkpad:~/Descargas$ git clone https :// github.com/ abblancodos /asignacion -docker.git
+error: switch desconocido `d'
+uso: git clone [<opciones>] [--] <repo> [<directorio>]
+
+    -v, --[no-]verbose    ser más verboso
+    -q, --[no-]quiet      ser más callado
+    --[no-]progress       forzar el reporte de progreso
+    --[no-]reject-shallow no clonar repositorios superficiales
+    -n, --no-checkout     no crear checkout
+    --checkout            opposite of --no-checkout
+    --[no-]bare           crear un repositorio vacío
+    --[no-]mirror         create a mirror repository (implies --bare)
+    -l, --[no-]local      clonar de un repositorio local
+    --no-hardlinks        no usar hardlinks, siempre copiar
+    --hardlinks           opposite of --no-hardlinks
+    -s, --[no-]shared     configurar como repositorio compartido
+    --[no-]recurse-submodules[=<pathspec>]
+                          inicializar submódulos en el clon
+    --[no-]recursive[=<pathspec>]
+                          alias de --recurse-submodules
+    -j, --[no-]jobs <n>   número de submódulos clonados en paralelo
+    --[no-]template <directorio-template>
+                          directorio del cual los templates serán usados
+    --[no-]reference <repo>
+                          repositorio de referencia
+    --[no-]reference-if-able <repo>
+                          repositorio de referencia
+    --[no-]dissociate     usar --reference solamente si estás clonando
+    -o, --[no-]origin <nombre>
+                          usar <nombre> en lugar de 'origin' para rastrear upstream
+    -b, --[no-]branch <rama>
+                          checkout <rama> en lugar de HEAD remota
+    -u, --[no-]upload-pack <ruta>
+                          ruta para git-upload-pack en el remoto
+    --[no-]depth <profundidad>
+                          crear un clon superficial de esa profundidad
+    --[no-]shallow-since <tiempo>
+                          crear un clon superficial desde el tiempo específico
+    --[no-]shallow-exclude <revisión>
+                          ahondar historia de clon superficial, excluyendo rev
+    --[no-]single-branch  clonar solo una rama, HEAD o --branch
+    --no-tags             no clonar ningún tag, y hacer que los subsiguientes fetch no los sigan
+    --tags                opposite of --no-tags
+    --[no-]shallow-submodules
+                          cualquier submódulo clonado será superficial
+    --[no-]separate-git-dir <gitdir>
+                          separar git dir del árbol de trabajo
+    --[no-]ref-format <formato>
+                          specify the reference format to use
+    -c, --[no-]config <llave=valor>
+                          configurar config dentro del nuevo repositorio
+    --[no-]server-option <específico-al-servidor>
+                          opción para trasmitir
+    -4, --ipv4            solo usar direcciones IPv4
+    -6, --ipv6            solo usar direcciones IPv6
+    --[no-]filter <args>  filtrado de objeto
+    --[no-]also-filter-submodules
+                          aplicar filtros de clonación parcial a los submódulos
+    --[no-]remote-submodules
+                          cualquier submódulo clonado usará su branch de rastreo remoto
+    --[no-]sparse         inicializar archivo sparse-checkout para incluir solo archivos en la raíz
+    --[no-]bundle-uri <uri>
+                          un URI para descargar bundles antes de hacer fetch del remoto de origen
+
+alfaquillo@quillo-thinkpad:~/Descargas$ git clone https://github.com/abblancodos/asignacion-docker.git
+Clonando en 'asignacion-docker'...
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 10 (delta 1), reused 6 (delta 0), pack-reused 0 (from 0)
+Recibiendo objetos: 100% (10/10), listo.
+Resolviendo deltas: 100% (1/1), listo.
+alfaquillo@quillo-thinkpad:~/Descargas$ cd asignacion-docker/
+alfaquillo@quillo-thinkpad:~/Descargas/asignacion-docker$ ls
+jupyter-docker.df  plot_iris_svc.ipynb
+alfaquillo@quillo-thinkpad:~/Descargas/asignacion-docker$ docker search ubuntu
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.51/images/search?term=ubuntu": dial unix /var/run/docker.sock: connect: permission denied
+alfaquillo@quillo-thinkpad:~/Descargas/asignacion-docker$ docker pull ubuntu:20.04
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.51/images/create?fromImage=docker.io%2Flibrary%2Fubuntu&tag=20.04": dial unix /var/run/docker.sock: connect: permission denied
+alfaquillo@quillo-thinkpad:~/Descargas/asignacion-docker$ sudo docker pull ubuntu:20.04
+[sudo] contraseña para alfaquillo: 
+20.04: Pulling from library/ubuntu
+13b7e930469f: Pull complete 
+Digest: sha256:8feb4d8ca5354def3d8fce243717141ce31e2c428701f6682bd2fafe15388214
+Status: Downloaded newer image for ubuntu:20.04
+docker.io/library/ubuntu:20.04
+alfaquillo@quillo-thinkpad:~/Descargas/asignacion-docker$ sudo usermod -aG docker alfaquillo
+alfaquillo@quillo-thinkpad:~/Descargas/asignacion-docker$ docker pull python:3.9-slim
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Post "http://%2Fvar%2Frun%2Fdocker.sock/v1.51/images/create?fromImage=docker.io%2Flibrary%2Fpython&tag=3.9-slim": dial unix /var/run/docker.sock: connect: permission denied
+alfaquillo@quillo-thinkpad:~/Descargas/asignacion-docker$ sudo docker pull python:3.9-slim
+3.9-slim: Pulling from library/python
+8c7716127147: Pull complete 
+3c43e65991bd: Pull complete 
+52ad2c1a7277: Pull complete 
+c3facbf8ee16: Pull complete 
+Digest: sha256:151b796af055298f244bc4d203bc19e19b0e63c8aa26c4fed2fc6809ea9b7caf
+Status: Downloaded newer image for python:3.9-slim
+docker.io/library/python:3.9-slim
+alfaquillo@quillo-thinkpad:~/Descargas/asignacion-docker$ docker images
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Head "http://%2Fvar%2Frun%2Fdocker.sock/_ping": dial unix /var/run/docker.sock: connect: permission denied
+alfaquillo@quillo-thinkpad:~/Descargas/asignacion-docker$ sudo usermod -aG docker alfaquillo
+alfaquillo@quillo-thinkpad:~/Descargas/asignacion-docker$ sudo docker images
+REPOSITORY    TAG        IMAGE ID       CREATED        SIZE
+hello-world   latest     1b44b5a3e06a   8 weeks ago    10.1kB
+python        3.9-slim   abf3b76f84b9   8 weeks ago    120MB
+ubuntu        20.04      b7bab04fd9aa   6 months ago   72.8MB
+alfaquillo@quillo-thinkpad:~/Descargas/asignacion-docker$ docker run -it ubuntu:20.04 /bin/bash
+docker: permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Head "http://%2Fvar%2Frun%2Fdocker.sock/_ping": dial unix /var/run/docker.sock: connect: permission denied
+
+Run 'docker run --help' for more information
+alfaquillo@quillo-thinkpad:~/Descargas/asignacion-docker$ sudo docker run -it ubuntu:20.04 /bin/bash
+root@80d895c3aaa4:/# cat /etc/os-release
+NAME="Ubuntu"
+VERSION="20.04.6 LTS (Focal Fossa)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 20.04.6 LTS"
+VERSION_ID="20.04"
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+VERSION_CODENAME=focal
+UBUNTU_CODENAME=focal
+root@80d895c3aaa4:/# apk update
+bash: apk: command not found
+root@80d895c3aaa4:/# ls
+bin   dev  home  lib32  libx32  mnt  proc  run   srv  tmp  var
+boot  etc  lib   lib64  media   opt  root  sbin  sys  usr
+root@80d895c3aaa4:/# exit       
+exit
+alfaquillo@quillo-thinkpad:~/Descargas/asignacion-docker$ docker search alpine
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.51/images/search?term=alpine": dial unix /var/run/docker.sock: connect: permission denied
+alfaquillo@quillo-thinkpad:~/Descargas/asignacion-docker$ sudo docker search alpine[sudo] contraseña para alfaquillo: 
+NAME                DESCRIPTION                                     STARS     OFFICIAL
+alpine              A minimal Docker image based on Alpine Linux…   11394     [OK]
+alpine/git          A  simple git container running in alpine li…   244       
+alpine/socat        Run socat command in alpine container           112       
+alpine/helm         Auto-trigger docker build for kubernetes hel…   69        
+alpine/curl                                                         10        
+alpine/k8s          Kubernetes toolbox for EKS (kubectl, helm, i…   62        
+alpine/bombardier   Auto-trigger docker build for bombardier whe…   28        
+alpine/httpie       Auto-trigger docker build for `httpie` when …   21        
+alpine/terragrunt   Auto-trigger docker build for terragrunt whe…   17        
+alpine/openssl      openssl                                         7         
+alpine/flake8       Auto-trigger docker build for fake8 via ci c…   2         
+alpine/psql         psql — The PostgreSQL Command-Line Client       4         
+alpine/ansible      run ansible and ansible-playbook in docker      27        
+alpine/kubectl      Kubernetes command-line tool for managing cl…   0         
+alpine/jmeter       run jmeter in Docker                            9         
+alpine/semver       Docker tool for semantic versioning             4         
+alpine/java         Repo containing the build scripts to produce…   4         
+alpine/xml          several xml tools to work on xml file as jq …   1         
+alpine/mongosh      mongosh - MongoDB Command Line Database Tools   2         
+alpine/mysql        mysql client                                    6         
+alpine/gcloud       Auto-trigger docker build for gcloud (google…   0         
+alpine/cfn-nag      Auto-trigger docker build for cfn-nag when n…   0         
+alpine/bundle       This repository has been archived by the own…   1         
+alpine/crane                                                        0         
+alpine/dfimage      reverse Docker images into Dockerfiles          70        
+alfaquillo@quillo-thinkpad:~/Descargas/asignacion-docker$ sudo docker pull alpine
+Using default tag: latest
+latest: Pulling from library/alpine
+9824c27679d3: Pull complete 
+Digest: sha256:4bcff63911fcb4448bd4fdacec207030997caf25e9bea4045fa6c8c44de311d1
+Status: Downloaded newer image for alpine:latest
+docker.io/library/alpine:latest
+alfaquillo@quillo-thinkpad:~/Descargas/asignacion-docker$ sudo docker pull python:3.9-slim
+3.9-slim: Pulling from library/python
+Digest: sha256:151b796af055298f244bc4d203bc19e19b0e63c8aa26c4fed2fc6809ea9b7caf
+Status: Image is up to date for python:3.9-slim
+docker.io/library/python:3.9-slim
+alfaquillo@quillo-thinkpad:~/Descargas/asignacion-docker$ sudo docker run -it alpine /bin/bash
+docker: Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: exec: "/bin/bash": stat /bin/bash: no such file or directory: unknown
+
+Run 'docker run --help' for more information
+alfaquillo@quillo-thinkpad:~/Descargas/asignacion-docker$ sudo docker images
+REPOSITORY    TAG        IMAGE ID       CREATED        SIZE
+hello-world   latest     1b44b5a3e06a   8 weeks ago    10.1kB
+python        3.9-slim   abf3b76f84b9   8 weeks ago    120MB
+alpine        latest     9234e8fb04c4   2 months ago   8.31MB
+ubuntu        20.04      b7bab04fd9aa   6 months ago   72.8MB
+alfaquillo@quillo-thinkpad:~/Descargas/asignacion-docker$ sudo docker run -it alpine
+/ # cat /etc/os-release
+NAME="Alpine Linux"
+ID=alpine
+VERSION_ID=3.22.1
+PRETTY_NAME="Alpine Linux v3.22"
+HOME_URL="https://alpinelinux.org/"
+BUG_REPORT_URL="https://gitlab.alpinelinux.org/alpine/aports/-/issues"
+/ # apk update
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.22/main/x86_64/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.22/community/x86_64/APKINDEX.tar.gz
+v3.22.1-541-gdab515791c0 [https://dl-cdn.alpinelinux.org/alpine/v3.22/main]
+v3.22.1-540-g7e2526a971c [https://dl-cdn.alpinelinux.org/alpine/v3.22/community]
+OK: 26327 distinct packages available
+/ # apk install build-base linux-headers gfortran musl-dev lapack-dev jpeg-dev zlib
+-dev freetype-dev
+ERROR: 'install' is not an apk command. See 'apk --help'.
+/ # apk --help
+apk-tools 2.14.9, compiled for x86_64.
+
+usage: apk [<OPTIONS>...] COMMAND [<ARGUMENTS>...]
+
+Package installation and removal:
+  add        Add or modify constraints in WORLD and commit changes
+  del        Remove constraints from WORLD and commit changes
+
+System maintenance:
+  fix        Fix, reinstall or upgrade packages without modifying WORLD
+  update     Update repository indexes
+  upgrade    Install upgrades available from repositories
+  cache      Manage the local package cache
+
+Querying package information:
+  info       Give detailed information about packages or repositories
+  list       List packages matching a pattern or other criteria
+  dot        Render dependencies as graphviz graphs
+  policy     Show repository policy for packages
+  search     Search for packages by name or description
+
+Repository maintenance:
+  index      Create repository index file from packages
+  fetch      Download packages from repositories to a local directory
+  manifest   Show checksums of package contents
+  verify     Verify package integrity and signature
+
+Miscellaneous:
+  audit      Audit system for changes
+  stats      Show statistics about repositories and installations
+  version    Compare package versions or perform tests on version strings
+
+This apk has coffee making abilities.
+For more information: man 8 apk
+/ # apk add build-base linux-headers gfortran musl-dev lapack-dev jpeg-dev zlib-dev
+ freetype-dev
+(1/45) Installing libgcc (14.2.0-r6)
+(2/45) Installing jansson (2.14.1-r0)
+(3/45) Installing libstdc++ (14.2.0-r6)
+(4/45) Installing zstd-libs (1.5.7-r0)
+(5/45) Installing binutils (2.44-r3)
+(6/45) Installing libmagic (5.46-r2)
+(7/45) Installing file (5.46-r2)
+(8/45) Installing libgomp (14.2.0-r6)
+(9/45) Installing libatomic (14.2.0-r6)
+(10/45) Installing gmp (6.3.0-r3)
+(11/45) Installing isl26 (0.26-r1)
+(12/45) Installing mpfr4 (4.2.1_p1-r0)
+(13/45) Installing mpc1 (1.3.1-r1)
+(14/45) Installing gcc (14.2.0-r6)
+(15/45) Installing libstdc++-dev (14.2.0-r6)
+(16/45) Installing musl-dev (1.2.5-r10)
+(17/45) Installing g++ (14.2.0-r6)
+(18/45) Installing make (4.4.1-r3)
+(19/45) Installing fortify-headers (1.1-r5)
+(20/45) Installing patch (2.8-r0)
+(21/45) Installing build-base (0.5-r3)
+(22/45) Installing brotli-libs (1.1.0-r2)
+(23/45) Installing libbz2 (1.0.8-r6)
+(24/45) Installing libpng (1.6.47-r0)
+(25/45) Installing freetype (2.13.3-r0)
+(26/45) Installing pkgconf (2.4.3-r0)
+(27/45) Installing bzip2-dev (1.0.8-r6)
+(28/45) Installing brotli (1.1.0-r2)
+(29/45) Installing brotli-dev (1.1.0-r2)
+(30/45) Installing zlib-dev (1.3.1-r2)
+(31/45) Installing libpng-dev (1.6.47-r0)
+(32/45) Installing freetype-dev (2.13.3-r0)
+(33/45) Installing libquadmath (14.2.0-r6)
+(34/45) Installing libgfortran (14.2.0-r6)
+(35/45) Installing gfortran (14.2.0-r6)
+(36/45) Installing libjpeg-turbo (3.1.0-r0)
+(37/45) Installing libturbojpeg (3.1.0-r0)
+(38/45) Installing libjpeg-turbo-dev (3.1.0-r0)
+(39/45) Installing jpeg-dev (9f-r0)
+(40/45) Installing blas (3.12.1-r0)
+(41/45) Installing lapack (3.12.1-r0)
+(42/45) Installing cblas (3.12.1-r0)
+(43/45) Installing blas-dev (3.12.1-r0)
+(44/45) Installing lapack-dev (3.12.1-r0)
+(45/45) Installing linux-headers (6.14.2-r0)
+Executing busybox-1.37.0-r18.trigger
+OK: 327 MiB in 61 packages
+/ # RUN cd /root && python3 -m venv sklearn -env
+/bin/sh: RUN: not found
+/ # ls
+bin    etc    lib    mnt    proc   run    srv    tmp    var
+dev    home   media  opt    root   sbin   sys    usr
+/ # cd /root
+~ # python3 -m venv sklearn-env
+/bin/sh: python3: not found
+~ # apk add python3
+(1/14) Installing libexpat (2.7.3-r0)
+(2/14) Installing libffi (3.4.8-r0)
+(3/14) Installing gdbm (1.24-r0)
+(4/14) Installing xz-libs (5.8.1-r0)
+(5/14) Installing mpdecimal (4.0.1-r0)
+(6/14) Installing ncurses-terminfo-base (6.5_p20250503-r0)
+(7/14) Installing libncursesw (6.5_p20250503-r0)
+(8/14) Installing libpanelw (6.5_p20250503-r0)
+(9/14) Installing readline (8.2.13-r1)
+(10/14) Installing sqlite-libs (3.49.2-r1)
+(11/14) Installing python3 (3.12.11-r0)
+(12/14) Installing python3-pycache-pyc0 (3.12.11-r0)
+(13/14) Installing pyc (3.12.11-r0)
+(14/14) Installing python3-pyc (3.12.11-r0)
+Executing busybox-1.37.0-r18.trigger
+OK: 363 MiB in 75 packages
+~ # python3 -m venv sklearn-env
+~ # RUN cd /root && . sklearn -env/bin/ activate && pip3 install -U scikit -learn
+/bin/sh: RUN: not found
+~ # cd /root && . sklearn -env/bin/ activate && pip3 install -U scikit -learn
+/bin/sh: .: can't open 'sklearn': No such file or directory
+~ # sklearn -env/bin/ activate && pip3 install -U scikit -learn
+/bin/sh: sklearn: not found
+~ # sklearn-env/bin/ activate && pip3 install -U scikit -learn
+/bin/sh: sklearn-env/bin/: Permission denied
+~ # .sklearn-env/bin/ activate && pip3 install -U scikit -learn
+/bin/sh: .sklearn-env/bin/: not found
+~ # RUN cd /root && .sklearn-env/bin/activate && pip3 install -U scikit -learn
+/bin/sh: RUN: not found
+~ # cd /root && .sklearn-env/bin/activate && pip3 install -U scikit -learn
+/bin/sh: .sklearn-env/bin/activate: not found
+~ # ls
+sklearn-env
+~ # sklearn-env/bin/activate && pip3 install -U scikit -learn
+/bin/sh: sklearn-env/bin/activate: Permission denied
+~ # sklearn-env/bin/activate
+/bin/sh: sklearn-env/bin/activate: Permission denied
+~ # sudo sklearn-env/bin/activate
+/bin/sh: sudo: not found
+~ # apk install sudo
+ERROR: 'install' is not an apk command. See 'apk --help'.
+~ # apk add  sudo
+(1/1) Installing sudo (1.9.17_p2-r0)
+Executing busybox-1.37.0-r18.trigger
+OK: 365 MiB in 76 packages
+~ # ls
+sklearn-env
+~ # cd sklearn-env/
+~/sklearn-env # ls
+bin         include     lib         lib64       pyvenv.cfg
+~/sklearn-env # cd bin
+~/sklearn-env/bin # ls
+Activate.ps1   activate.csh   pip            pip3.12        python3
+activate       activate.fish  pip3           python         python3.12
+~/sklearn-env/bin # activate
+/bin/sh: activate: not found
+~/sklearn-env/bin # ./activate
+/bin/sh: ./activate: Permission denied
+~/sklearn-env/bin # sudo ./activate
+sudo: ./activate: command not found
+~/sklearn-env/bin # ./activate
+/bin/sh: ./activate: Permission denied
+~/sklearn-env/bin # pip3
+/bin/sh: pip3: not found
+~/sklearn-env/bin # apk add python3-pip
+ERROR: unable to select packages:
+  python3-pip (no such package):
+    required by: world[python3-pip]
+~/sklearn-env/bin # apk search python3-pip
+~/sklearn-env/bin # apk search python3
+agensgraph-plpython3-2.15.0-r0
+agensgraph-plpython3-contrib-2.15.0-r0
+bareos-24.0.1-r0
+boost1.84-python3-1.84.0-r3
+freeradius-python3-3.0.27-r1
+freeswitch-python3-1.10.12-r3
+ipython-9.2.0-r0
+kamailio-python3-6.0.1-r5
+libpeas-python3-1.36.0-r6
+libpeas2-python3-2.0.7-r0
+postgresql15-plpython3-15.14-r0
+postgresql15-plpython3-contrib-15.14-r0
+postgresql16-plpython3-16.10-r0
+postgresql16-plpython3-contrib-16.10-r0
+postgresql17-plpython3-17.6-r0
+postgresql17-plpython3-contrib-17.6-r0
+py3-imath-3.1.12-r0
+py3-python3-saml-1.16.0-r1
+py3-python3-saml-pyc-1.16.0-r1
+python3-3.12.11-r0
+python3-dbg-3.12.11-r0
+python3-dev-3.12.11-r0
+python3-doc-3.12.11-r0
+python3-gdbm-3.12.11-r0
+python3-idle-3.12.11-r0
+python3-pyc-3.12.11-r0
+python3-pycache-pyc0-3.12.11-r0
+python3-pycache-pyc1-3.12.11-r0
+python3-pycache-pyc2-3.12.11-r0
+python3-tests-3.12.11-r0
+python3-tkinter-3.12.11-r0
+python3-tkinter-pyc-3.12.11-r0
+python3-tkinter-tests-3.12.11-r0
+unit-python3-1.35.0-r0
+uwsgi-python3-2.0.30-r0
+~/sklearn-env/bin # 
+
