@@ -1,0 +1,194 @@
+alfaquillo@quillo-thinkpad:~$ podman network create jenkins
+jenkins
+alfaquillo@quillo-thinkpad:~$ podman docker run -d --name jenkins -- network jenkins -p 8081:8080 \
+-p 50000:50000 \ -v jenkins_home :/ var / jenkins_home \ jenkins / jenkins : lts
+Error: unknown shorthand flag: 'd' in -d
+See 'podman --help'
+alfaquillo@quillo-thinkpad:~$ podman run -d --name jenkins -- network jenkins -p 8081:8080 -p 50000:50000 \ -v jenkins_home :/ var / jenkins_home \ jenkins / jenkins : lts
+✔ docker.io/library/network:latest
+Trying to pull docker.io/library/network:latest...
+Error: initializing source docker://network:latest: reading manifest latest in docker.io/library/network: requested access to the resource is denied
+alfaquillo@quillo-thinkpad:~$ podman run -d --name jenkins -- network jenkins -p 8081:8080 -p 50000:50000 \ -v jenkins_home :/ var / jenkins_home \ jenkins / jenkins : lts
+✔ registry.access.redhat.com/network:latest
+Trying to pull registry.access.redhat.com/network:latest...
+Error: initializing source docker://registry.access.redhat.com/network:latest: reading manifest latest in registry.access.redhat.com/network: name unknown: Repo not found
+alfaquillo@quillo-thinkpad:~$ podman run -d --name jenkins -- network jenkins -p 8081:8080 -p 50000:50000 \ -v jenkins_home :/ var / jenkins_home \ jenkins / jenkins : lts
+✔ registry.redhat.io/network:latest
+Trying to pull registry.redhat.io/network:latest...
+Error: initializing source docker://registry.redhat.io/network:latest: unable to retrieve auth token: invalid username/password: unauthorized: Please login to the Red Hat Registry using your Customer Portal credentials. Further instructions can be found here: https://access.redhat.com/RegistryAuthentication
+alfaquillo@quillo-thinkpad:~$ podman run -d --name jenkins -- network jenkins -p 8081:8080 -p 50000:50000 \ -v jenkins_home :/ var / jenkins_home \ jenkins / jenkins : lts
+✔ docker.io/library/network:latest
+Trying to pull docker.io/library/network:latest...
+Error: initializing source docker://network:latest: reading manifest latest in docker.io/library/network: requested access to the resource is denied
+alfaquillo@quillo-thinkpad:~$ podman run -d --name jenkins -- network jenkins -p 8081:8080 -p 50000:50000 \ -v jenkins_home :/ var / jenkins_home \ jenkins / jenkins : lts
+✔ registry.redhat.io/network:latest
+Trying to pull registry.redhat.io/network:latest...
+Error: initializing source docker://registry.redhat.io/network:latest: unable to retrieve auth token: invalid username/password: unauthorized: Please login to the Red Hat Registry using your Customer Portal credentials. Further instructions can be found here: https://access.redhat.com/RegistryAuthentication
+alfaquillo@quillo-thinkpad:~$ podman login registry.redhat.io
+Username: alfaquillo
+Password: 
+Login Succeeded!
+alfaquillo@quillo-thinkpad:~$ podman run -d --name jenkins -- network jenkins -p 8081:8080 -p 50000:50000 \ -v jenkins_home :/ var / jenkins_home \ jenkins / jenkins : lts
+✔ registry.redhat.io/network:latest
+Trying to pull registry.redhat.io/network:latest...
+Error: initializing source docker://registry.redhat.io/network:latest: reading manifest latest in registry.redhat.io/network: unauthorized: access to the requested resource is not authorized
+alfaquillo@quillo-thinkpad:~$ podman run -d \
+  --name jenkins \
+  --network jenkins \
+  -p 8081:8080 \
+  -p 50000:50000 \
+  -v jenkins_home:/var/jenkins_home \
+  docker.io/jenkins/jenkins:lts
+Trying to pull docker.io/jenkins/jenkins:lts...
+Getting image source signatures
+Copying blob 5fe83599b627 done   | 
+Copying blob c9a178fb1e40 done   | 
+Copying blob c7acc196d9db done   | 
+Copying blob 8fb375ec14f3 done   | 
+Copying blob 59c3eb56f065 done   | 
+Copying blob 5ad06dc8d2bc done   | 
+Copying blob 1d17e189ff23 done   | 
+Copying blob 18238f4d9e48 done   | 
+Copying blob 7c1a19381ac9 done   | 
+Copying blob 195624e01063 done   | 
+Copying blob e4441ae29535 done   | 
+Copying blob 4f19f207bd6e done   | 
+Copying config 79d081a365 done   | 
+Writing manifest to image destination
+8a72681e372f5beb3737d0d4b53f2dd5a07d2cfaf0898b6c67c1520b1675454c
+alfaquillo@quillo-thinkpad:~$ ^C
+alfaquillo@quillo-thinkpad:~$ podman exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+eca898ac440946638acfdfde6c4eb392
+alfaquillo@quillo-thinkpad:~$ ls
+Descargas  Documentos  Escritorio  Imágenes  Música  Plantillas  Público  tools  Vídeos
+alfaquillo@quillo-thinkpad:~$ cd tools/minitalleres/
+alfaquillo@quillo-thinkpad:~/tools/minitalleres$ ls
+asignacion-docker  buildroot-minitaller  Depuradores  openvino-workshop-tec  sourceCode
+alfaquillo@quillo-thinkpad:~/tools/minitalleres$ git clone git@github.com:alfaquillo/qosmate.git
+Clonando en 'qosmate'...
+remote: Enumerating objects: 1263, done.
+remote: Counting objects: 100% (466/466), done.
+remote: Compressing objects: 100% (251/251), done.
+remote: Total 1263 (delta 386), reused 215 (delta 215), pack-reused 797 (from 2)
+Recibiendo objetos: 100% (1263/1263), 591.69 KiB | 1.58 MiB/s, listo.
+Resolviendo deltas: 100% (594/594), listo.
+alfaquillo@quillo-thinkpad:~/tools/minitalleres$ cd qosmate/
+alfaquillo@quillo-thinkpad:~/tools/minitalleres/qosmate$ ls
+etc  file_fixups.txt  LICENSE  Makefile  README.md  usr
+alfaquillo@quillo-thinkpad:~/tools/minitalleres/qosmate$ git remote add upstream git@github.com:alfaquillo/qosmate.git
+alfaquillo@quillo-thinkpad:~/tools/minitalleres/qosmate$ git remote -v
+origin	git@github.com:alfaquillo/qosmate.git (fetch)
+origin	git@github.com:alfaquillo/qosmate.git (push)
+upstream	git@github.com:alfaquillo/qosmate.git (fetch)
+upstream	git@github.com:alfaquillo/qosmate.git (push)
+alfaquillo@quillo-thinkpad:~/tools/minitalleres/qosmate$ wget https :// bin . equinox . io / c / bNyj1mQVY4c / ngrok - v3 - stable - linux - amd64 .
+tgz
+--2025-10-12 15:58:51--  http://https/
+Resolviendo https (https)... falló: Nombre o servicio desconocido.
+wget: no se pudo resolver la dirección del equipo «https»
+://: Falta esquema.
+--2025-10-12 15:58:51--  http://bin/
+Resolviendo bin (bin)... falló: Nombre o servicio desconocido.
+wget: no se pudo resolver la dirección del equipo «bin»
+--2025-10-12 15:58:51--  http://./
+Resolviendo . (.)... falló: Nombre o servicio desconocido.
+wget: no se pudo resolver la dirección del equipo «.»
+--2025-10-12 15:58:51--  http://equinox/
+Resolviendo equinox (equinox)... falló: Nombre o servicio desconocido.
+wget: no se pudo resolver la dirección del equipo «equinox»
+--2025-10-12 15:58:52--  http://./
+Resolviendo . (.)... falló: Nombre o servicio desconocido.
+wget: no se pudo resolver la dirección del equipo «.»
+--2025-10-12 15:58:52--  http://io/
+Resolviendo io (io)... falló: Nombre o servicio desconocido.
+wget: no se pudo resolver la dirección del equipo «io»
+/: Falta esquema.
+--2025-10-12 15:58:52--  http://c/
+Resolviendo c (c)... falló: Nombre o servicio desconocido.
+wget: no se pudo resolver la dirección del equipo «c»
+/: Falta esquema.
+--2025-10-12 15:58:52--  http://bnyj1mqvy4c/
+Resolviendo bnyj1mqvy4c (bnyj1mqvy4c)... falló: Nombre o servicio desconocido.
+wget: no se pudo resolver la dirección del equipo «bnyj1mqvy4c»
+/: Falta esquema.
+--2025-10-12 15:58:52--  http://ngrok/
+Resolviendo ngrok (ngrok)... falló: Nombre o servicio desconocido.
+wget: no se pudo resolver la dirección del equipo «ngrok»
+--2025-10-12 15:58:52--  http://-/
+Resolviendo - (-)... falló: Nombre o servicio desconocido.
+wget: no se pudo resolver la dirección del equipo «-»
+--2025-10-12 15:58:52--  http://v3/
+Resolviendo v3 (v3)... falló: Nombre o servicio desconocido.
+wget: no se pudo resolver la dirección del equipo «v3»
+--2025-10-12 15:58:52--  http://-/
+Resolviendo - (-)... falló: Nombre o servicio desconocido.
+wget: no se pudo resolver la dirección del equipo «-»
+--2025-10-12 15:58:52--  http://stable/
+Resolviendo stable (stable)... falló: Nombre o servicio desconocido.
+wget: no se pudo resolver la dirección del equipo «stable»
+--2025-10-12 15:58:52--  http://-/
+Resolviendo - (-)... falló: Nombre o servicio desconocido.
+wget: no se pudo resolver la dirección del equipo «-»
+--2025-10-12 15:58:52--  http://linux/
+Resolviendo linux (linux)... falló: Nombre o servicio desconocido.
+wget: no se pudo resolver la dirección del equipo «linux»
+--2025-10-12 15:58:53--  http://-/
+Resolviendo - (-)... falló: Nombre o servicio desconocido.
+wget: no se pudo resolver la dirección del equipo «-»
+--2025-10-12 15:58:53--  http://amd64/
+Resolviendo amd64 (amd64)... falló: Nombre o servicio desconocido.
+wget: no se pudo resolver la dirección del equipo «amd64»
+--2025-10-12 15:58:53--  http://./
+Resolviendo . (.)... falló: Nombre o servicio desconocido.
+wget: no se pudo resolver la dirección del equipo «.»
+gzip: compressed data not written to a terminal. Use -f to force compression.
+For help, type: gzip -h
+./
+./.git/
+./.git/branches/
+./.git/hooks/
+./.git/hooks/applypatch-msg.sample
+./.git/hooks/commit-msg.sample
+./.git/hooks/post-update.sample
+./.git/hooks/pre-applypatch.sample
+./.git/hooks/pre-commit.sample
+./.git/hooks/pre-merge-commit.sample
+alfaquillo@quillo-thinkpad:~/tools/minitalleres/qosmate$ cd .. & wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
+[1] 789464
+--2025-10-12 16:00:08--  https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
+Resolviendo bin.equinox.io (bin.equinox.io)... 35.71.179.82, 99.83.220.108, 13.248.244.96, ...
+Conectando con bin.equinox.io (bin.equinox.io)[35.71.179.82]:443... conectado.
+Petición HTTP enviada, esperando respuesta... 200 OK
+Longitud: 9315483 (8,9M) [application/octet-stream]
+Grabando a: «ngrok-v3-stable-linux-amd64.tgz»
+
+ngrok-v3-stable-linux-amd64.t 100%[=================================================>]   8,88M  2,58MB/s    en 3,7s    
+
+2025-10-12 16:00:14 (2,40 MB/s) - «ngrok-v3-stable-linux-amd64.tgz» guardado [9315483/9315483]
+
+[1]+  Hecho                   cd ..
+alfaquillo@quillo-thinkpad:~/tools/minitalleres/qosmate$ cd ..
+alfaquillo@quillo-thinkpad:~/tools/minitalleres$ ls
+asignacion-docker  buildroot-minitaller  Depuradores  openvino-workshop-tec  qosmate  sourceCode
+alfaquillo@quillo-thinkpad:~/tools/minitalleres$ wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
+--2025-10-12 16:00:43--  https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
+Resolviendo bin.equinox.io (bin.equinox.io)... 75.2.60.68, 35.71.179.82, 99.83.220.108, ...
+Conectando con bin.equinox.io (bin.equinox.io)[75.2.60.68]:443... conectado.
+Petición HTTP enviada, esperando respuesta... 200 OK
+Longitud: 9315483 (8,9M) [application/octet-stream]
+Grabando a: «ngrok-v3-stable-linux-amd64.tgz»
+
+ngrok-v3-stable-linux-amd64.t 100%[=================================================>]   8,88M  2,67MB/s    en 3,3s    
+
+2025-10-12 16:00:47 (2,67 MB/s) - «ngrok-v3-stable-linux-amd64.tgz» guardado [9315483/9315483]
+
+alfaquillo@quillo-thinkpad:~/tools/minitalleres$ ls
+asignacion-docker     Depuradores                      openvino-workshop-tec  sourceCode
+buildroot-minitaller  ngrok-v3-stable-linux-amd64.tgz  qosmate
+alfaquillo@quillo-thinkpad:~/tools/minitalleres$ tar xvzf ngrok-v3-stable-linux-amd64.tgz 
+ngrok
+alfaquillo@quillo-thinkpad:~/tools/minitalleres$ sudo mv ngrok /usr/local/bin/
+[sudo] contraseña para alfaquillo: 
+alfaquillo@quillo-thinkpad:~/tools/minitalleres$ ngrok version
+ngrok version 3.30.0
+alfaquillo@quillo-thinkpad:~/tools/minitalleres$ 
