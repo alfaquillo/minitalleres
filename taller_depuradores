@@ -1,0 +1,246 @@
+⬢ [alfaquillo@toolbx ~]$ sudo dnf install gcc gdb
+Fedora 40 - x86_64 - Updates                                                            4.2 kB/s | 4.5 kB     00:01    
+El paquete gcc-14.2.1-3.fc40.x86_64 ya está instalado.
+Dependencias resueltas.
+========================================================================================================================
+ Paquete                          Arquitectura           Versión                          Repositorio              Tam.
+========================================================================================================================
+Instalando:
+ gdb                              x86_64                 16.2-1.fc40                      updates                 147 k
+Instalando dependencias:
+ boost-regex                      x86_64                 1.83.0-5.fc40                    updates                 111 k
+ ctags                            x86_64                 6.0.0-5.fc40                     fedora                  797 k
+ gdb-headless                     x86_64                 16.2-1.fc40                      updates                 5.1 M
+ libbabeltrace                    x86_64                 1.5.11-7.fc40                    fedora                  191 k
+ libipt                           x86_64                 2.1-3.fc40                       fedora                   57 k
+ source-highlight                 x86_64                 3.1.9-22.fc40                    fedora                  758 k
+
+Resumen de la transacción
+========================================================================================================================
+Instalar  7 Paquetes
+
+Tamaño total de la descarga: 7.1 M
+Tamaño instalado: 22 M
+¿Está de acuerdo [s/N]?: s
+Descargando paquetes:
+(1/7): libipt-2.1-3.fc40.x86_64.rpm                                                     114 kB/s |  57 kB     00:00    
+(2/7): libbabeltrace-1.5.11-7.fc40.x86_64.rpm                                           280 kB/s | 191 kB     00:00    
+(3/7): ctags-6.0.0-5.fc40.x86_64.rpm                                                    721 kB/s | 797 kB     00:01    
+(4/7): source-highlight-3.1.9-22.fc40.x86_64.rpm                                        1.2 MB/s | 758 kB     00:00    
+(5/7): boost-regex-1.83.0-5.fc40.x86_64.rpm                                             148 kB/s | 111 kB     00:00    
+(6/7): gdb-16.2-1.fc40.x86_64.rpm                                                       300 kB/s | 147 kB     00:00    
+(7/7): gdb-headless-16.2-1.fc40.x86_64.rpm                                              2.1 MB/s | 5.1 MB     00:02    
+------------------------------------------------------------------------------------------------------------------------
+Total                                                                                   852 kB/s | 7.1 MB     00:08     
+Ejecutando verificación de operación
+Verificación de operación exitosa.
+Ejecutando prueba de operaciones
+Prueba de operación exitosa.
+Ejecutando operación
+  Preparando          :                                                                                             1/1 
+  Instalando          : boost-regex-1.83.0-5.fc40.x86_64                                                            1/7 
+advertencia:Unable to get systemd shutdown inhibition lock: Did not receive a reply. Possible causes include: the remote application did not send a reply, the message bus security policy blocked the reply, the reply timeout expired, or the network connection was broken.
+
+  Instalando          : libipt-2.1-3.fc40.x86_64                                                                    2/7 
+  Instalando          : libbabeltrace-1.5.11-7.fc40.x86_64                                                          3/7 
+  Instalando          : ctags-6.0.0-5.fc40.x86_64                                                                   4/7 
+  Instalando          : source-highlight-3.1.9-22.fc40.x86_64                                                       5/7 
+  Instalando          : gdb-headless-16.2-1.fc40.x86_64                                                             6/7 
+  Ejecutando scriptlet: gdb-16.2-1.fc40.x86_64                                                                      7/7 
+  Instalando          : gdb-16.2-1.fc40.x86_64                                                                      7/7 
+  Ejecutando scriptlet: gdb-16.2-1.fc40.x86_64                                                                      7/7 
+
+Instalado:
+  boost-regex-1.83.0-5.fc40.x86_64             ctags-6.0.0-5.fc40.x86_64                 gdb-16.2-1.fc40.x86_64         
+  gdb-headless-16.2-1.fc40.x86_64              libbabeltrace-1.5.11-7.fc40.x86_64        libipt-2.1-3.fc40.x86_64       
+  source-highlight-3.1.9-22.fc40.x86_64       
+
+¡Listo!
+⬢ [alfaquillo@toolbx ~]$ gcc --version
+gcc (GCC) 14.2.1 20240912 (Red Hat 14.2.1-3)
+Copyright (C) 2024 Free Software Foundation, Inc.
+Esto es software libre; vea el código para las condiciones de copia.  NO hay
+garantía; ni siquiera para MERCANTIBILIDAD o IDONEIDAD PARA UN PROPÓSITO EN
+PARTICULAR
+
+⬢ [alfaquillo@toolbx ~]$ gdb --version
+GNU gdb (Fedora Linux) 16.2-1.fc40
+Copyright (C) 2024 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+⬢ [alfaquillo@toolbx ~]$ cd ~/tools
+⬢ [alfaquillo@toolbx tools]$ ls
+meta-openembedded  meta-qt5  meta-raspberrypi  minitalleres  poky
+⬢ [alfaquillo@toolbx tools]$ cd minitalleres/
+⬢ [alfaquillo@toolbx minitalleres]$ ls
+asignacion-docker  buildroot-minitaller  openvino-workshop-tec  sourceCode
+⬢ [alfaquillo@toolbx minitalleres]$ git clone git@github.com:LizGA/Depuradores.git
+Clonando en 'Depuradores'...
+remote: Enumerating objects: 16, done.
+remote: Counting objects: 100% (16/16), done.
+remote: Compressing objects: 100% (11/11), done.
+Recibiendo objetos: 100% (16/16), 4.69 KiB | 4.69 MiB/s, listo.
+remote: Total 16 (delta 4), reused 16 (delta 4), pack-reused 0 (from 0)
+Resolviendo deltas: 100% (4/4), listo.
+⬢ [alfaquillo@toolbx minitalleres]$ ls
+asignacion-docker  buildroot-minitaller  Depuradores  openvino-workshop-tec  sourceCode
+⬢ [alfaquillo@toolbx minitalleres]$ cd Depuradores/
+⬢ [alfaquillo@toolbx Depuradores]$ ls
+demo.c  README.md  suma.c
+⬢ [alfaquillo@toolbx Depuradores]$ cat demo.c
+#include <stdio.h>
+#include <stdint.h>
+
+int main() {
+    uint8_t a;  // 1 byte: 0-255
+    uint8_t b;  // 1 byte: 0-255
+    uint8_t resultado;
+
+    printf("=== Calculadora de Bytes ===\n");
+    printf("Ingrese primer número (0-255): ");
+    scanf("%hhu", &a);
+
+    printf("Ingrese segundo número (0-255): ");
+    scanf("%hhu", &b);
+
+    resultado = a * b;
+
+    printf("\n--- Resultado ---\n");
+    printf("%d × %d = %d\n", a, b, resultado);
+
+    return 0;
+}
+⬢ [alfaquillo@toolbx Depuradores]$ gcc -o suma suma.c
+⬢ [alfaquillo@toolbx Depuradores]$ ./suma
+Sumando!
+Ingrese valor a: 2          
+Ingrese valor b: 4
+Resultado de 2 + 4 = 0
+⬢ [alfaquillo@toolbx Depuradores]$ gcc -g -o suma suma.c
+⬢ [alfaquillo@toolbx Depuradores]$ ./suma
+Sumando!
+Ingrese valor a: 3
+Ingrese valor b: 5
+Resultado de 3 + 5 = 0
+⬢ [alfaquillo@toolbx Depuradores]$ gdb suma
+GNU gdb (Fedora Linux) 16.2-1.fc40
+Copyright (C) 2024 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from suma...
+(gdb) run
+Starting program: /home/alfaquillo/tools/minitalleres/Depuradores/suma 
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+  <https://debuginfod.fedoraproject.org/>
+Enable debuginfod for this session? (y or [n]) n
+Debuginfod has been disabled.
+To make this setting permanent, add 'set debuginfod enabled off' to .gdbinit.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+Sumando!
+Ingrese valor a: 10
+Ingrese valor b: 5
+Resultado de 10 + 5 = 2
+[Inferior 1 (process 784999) exited normally]
+Missing rpms, try: dnf --enablerepo='*debug*' install glibc-debuginfo-2.39-38.fc40.x86_64
+(gdb) list
+5	    printf("%s", txt);
+6	    scanf("%d", &n);
+7	    return n;
+8	}
+9	
+10	int main() {
+11	    printf("Sumando!\n");
+12	    int a = leer_num("Ingrese valor a: ");
+13	    int b = leer_num("Ingrese valor b: ");
+14	    int res = a / b;
+(gdb) brak main
+Undefined command: "brak".  Try "help".
+(gdb) break main
+Breakpoint 1 at 0x40118b: file suma.c, line 11.
+(gdb) info breakpoints
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x000000000040118b in main at suma.c:11
+(gdb) next
+The program is not being run.
+(gdb) run
+Starting program: /home/alfaquillo/tools/minitalleres/Depuradores/suma 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+
+Breakpoint 1, main () at suma.c:11
+11	    printf("Sumando!\n");
+(gdb) next
+Sumando!
+12	    int a = leer_num("Ingrese valor a: ");
+(gdb) next
+Ingrese valor a: 10
+13	    int b = leer_num("Ingrese valor b: ");
+(gdb) step
+leer_num (txt=0x402031 "Ingrese valor b: ") at suma.c:5
+5	    printf("%s", txt);
+(gdb) print txt
+$1 = 0x402031 "Ingrese valor b: "
+(gdb) next
+6	    scanf("%d", &n);
+(gdb) next
+Ingrese valor b: 5
+7	    return n;
+(gdb) print n
+$2 = 5
+(gdb) ptype n
+type = int
+(gdb) finish
+Run till exit from #0  leer_num (txt=0x402031 "Ingrese valor b: ") at suma.c:7
+0x00000000004011ac in main () at suma.c:13
+13	    int b = leer_num("Ingrese valor b: ");
+Value returned is $3 = 5
+(gdb) list
+8	}
+9	
+10	int main() {
+11	    printf("Sumando!\n");
+12	    int a = leer_num("Ingrese valor a: ");
+13	    int b = leer_num("Ingrese valor b: ");
+14	    int res = a / b;
+15	    printf("Resultado de %d + %d = %d\n", a, b, res);
+16	    return 0;
+17	}
+(gdb) next
+14	    int res = a / b;
+(gdb) next
+15	    printf("Resultado de %d + %d = %d\n", a, b, res);
+(gdb) info locals
+a = 10
+b = 5
+res = 2
+(gdb) print res
+$4 = 2
+(gdb) print &b
+$5 = (int *) 0x7fffffffdfd8
+(gdb) x/4xb &res
+0x7fffffffdfd4:	0x02	0x00	0x00	0x00
+(gdb) info breakpoints
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x000000000040118b in main at suma.c:11
+	breakpoint already hit 1 time
+(gdb) delete 1
+(gdb) continue
+Continuing.
+Resultado de 10 + 5 = 2
+[Inferior 1 (process 785029) exited normally]
+(gdb) Quit
+(gdb) 
