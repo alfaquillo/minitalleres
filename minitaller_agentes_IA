@@ -1,0 +1,28 @@
+time=2025-11-03T02:28:35.775Z level=INFO source=server.go:1251 msg="waiting for llama runner to start responding"
+time=2025-11-03T02:28:35.776Z level=INFO source=server.go:1289 msg="llama runner started in 0.79 seconds"
+[GIN] 2025/11/03 - 02:28:35 | 200 |  1.292689649s |       127.0.0.1 | POST     "/api/generate"
+>>> hola que día es
+Hola! Es el día 1º de enero. ¿Cómo puedo ayudarte hoy?[GIN] 2025/11/03 - 02:29:32 | 200 |  648.901892ms |       127.0.0.1 | POST     "/api/chat"
+
+
+>>> que sabes de sistemas embebidos y sephyros
+Estimados usuarios, como una inteligencia artificial, no tengo conocimientos personales y 
+necesito tener acceso a información del momento actual para proporcionar respuestas a tus 
+preguntas. Sin embargo, puedo decirte que los sistemas embebidos y Sephyros son dos 
+conceptos relacionados con el manejo de datos en las computadoras. 
+
+Un sistema embebido es un tipo de sistema en el cual los programas se ejecutan a través de 
+una red de transmisión de bits. Esto se hace a menudo mediante redes de cables conectando 
+diferentes dispositivos o procesadores que comienzan a enviar datos en la misma dirección 
+y luego, a través de un software o hardware especializado, recoger estos datos. 
+
+Por otro lado, el Sephyros es una característica más específica en los sistemas de control 
+de computadora que se basan en el procesamiento digital (un proceso físico) para permitir 
+que un sistema se convierta en computadoras. Esto puede ser útil para programas que tienen 
+que manejar grandes cantidades de datos a la vez, como en las ciudades o en centros 
+comerciales.
+
+Por favor, me advertizco de que este es solo un texto informativo y, sin el contexto 
+actual, no puedo proporcionarte respuestas exactas sobre los sistemas embebidos y Sephyros.[GIN] 2025/11/03 - 02:31:13 | 200 |  6.544375419s |       127.0.0.1 | POST     "/api/chat"
+
+
