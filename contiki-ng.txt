@@ -1,0 +1,56 @@
+root@8d143d46ed20:/# cd /tools
+root@8d143d46ed20:/tools# git clone https://github.com/contiki-ng/contiki-ng.git
+Cloning into 'contiki-ng'...
+remote: Enumerating objects: 144396, done.
+remote: Counting objects: 100% (292/292), done.
+remote: Compressing objects: 100% (166/166), done.
+remote: Total 144396 (delta 198), reused 126 (delta 126), pack-reused 144104 (from 2)
+Receiving objects: 100% (144396/144396), 81.40 MiB | 1.44 MiB/s, done.
+Resolving deltas: 100% (105839/105839), done.
+Updating files: 100% (2552/2552), done.
+root@8d143d46ed20:/tools# cd contiki-ng
+root@8d143d46ed20:/tools/contiki-ng# ls
+CODE_OF_CONDUCT.md  Makefile.dir-variables  Makefile.identify-target  README.md    doc       tests
+CONTRIBUTING.md     Makefile.embedded       Makefile.include          SECURITY.md  examples  tools
+LICENSE.md          Makefile.help           Makefile.tools            arch         os
+root@8d143d46ed20:/tools/contiki-ng# cd tools/cooja
+root@8d143d46ed20:/tools/contiki-ng/tools/cooja# ls
+root@8d143d46ed20:/tools/contiki-ng/tools/cooja# ls
+root@8d143d46ed20:/tools/contiki-ng/tools/cooja# ./gradlew run
+bash: ./gradlew: No such file or directory
+root@8d143d46ed20:/tools/contiki-ng/tools/cooja# cd ..
+root@8d143d46ed20:/tools/contiki-ng/tools# ls
+cc2538-bsl  coffee-manager  docker   git   motelist     sensniff   sky        vagrant   zolertia
+code-style  cooja           doxygen  ip64  readthedocs  serial-io  toolchain  viewconf
+root@8d143d46ed20:/tools/contiki-ng/tools# cd..
+bash: cd..: command not found
+root@8d143d46ed20:/tools/contiki-ng/tools# cd ..
+root@8d143d46ed20:/tools/contiki-ng# ls
+CODE_OF_CONDUCT.md  Makefile.dir-variables  Makefile.identify-target  README.md    doc       tests
+CONTRIBUTING.md     Makefile.embedded       Makefile.include          SECURITY.md  examples  tools
+LICENSE.md          Makefile.help           Makefile.tools            arch         os
+root@8d143d46ed20:/tools/contiki-ng# cd tools
+root@8d143d46ed20:/tools/contiki-ng/tools# ls
+cc2538-bsl  coffee-manager  docker   git   motelist     sensniff   sky        vagrant   zolertia
+code-style  cooja           doxygen  ip64  readthedocs  serial-io  toolchain  viewconf
+root@8d143d46ed20:/tools/contiki-ng/tools# cd cooja
+root@8d143d46ed20:/tools/contiki-ng/tools/cooja# ls
+root@8d143d46ed20:/tools/contiki-ng/tools/cooja# cd ..
+root@8d143d46ed20:/tools/contiki-ng/tools# ls
+cc2538-bsl  coffee-manager  docker   git   motelist     sensniff   sky        vagrant   zolertia
+code-style  cooja           doxygen  ip64  readthedocs  serial-io  toolchain  viewconf
+root@8d143d46ed20:/tools/contiki-ng/tools# cd ..
+root@8d143d46ed20:/tools/contiki-ng# ls
+CODE_OF_CONDUCT.md  Makefile.dir-variables  Makefile.identify-target  README.md    doc       tests
+CONTRIBUTING.md     Makefile.embedded       Makefile.include          SECURITY.md  examples  tools
+LICENSE.md          Makefile.help           Makefile.tools            arch         os
+root@8d143d46ed20:/tools/contiki-ng# make examples/hello-world
+make: Nothing to be done for 'examples/hello-world'.
+root@8d143d46ed20:/tools/contiki-ng# cd examples
+root@8d143d46ed20:/tools/contiki-ng/examples# ls
+6tisch      cplusplus    ip64-router         mqtt-client  platform-specific  sensniff     storage
+benchmarks  dev          libs                multicast    rpl-border-router  slip-radio   websocket
+coap        hello-world  lwm2m-ipso-objects  nullnet      rpl-udp            snmp-server
+root@8d143d46ed20:/tools/contiki-ng/examples# make hello-world/
+make: Nothing to be done for 'hello-world/'.
+root@8d143d46ed20:/tools/contiki-ng/examples#
